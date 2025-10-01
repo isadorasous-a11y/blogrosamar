@@ -12,16 +12,14 @@ export async function generateStaticParams() {
   return slugs.map((slug) => ({ slug }));
 }
 
-type PageProps = {
-  params: { slug: string };
-};
+
+type PageProps = { params: { slug: string } };
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const article = await getArticleBySlug(params.slug);
   if (!article) {
     return { title: 'Artigo não encontrado', description: 'Conteúdo não existe ou foi movido.' };
   }
-
   const base = process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000';
   const url = new URL(`/artigos/${article.slug}`, base);
 
