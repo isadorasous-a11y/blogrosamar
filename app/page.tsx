@@ -1,8 +1,9 @@
 import { getArticles } from '../lib/data';
 import ArticleCard from '../components/ArticleCard';
 
-export const dynamic = process.env.API_BASE_URL ? 'force-dynamic' : 'force-static';
-export const revalidate = process.env.API_BASE_URL ? 0 : 3600;
+
+export const dynamic = 'force-static';
+export const revalidate = 3600;
 
 export default async function HomePage() {
   const articles = await getArticles();
