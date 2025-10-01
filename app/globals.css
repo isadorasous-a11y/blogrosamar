@@ -1,0 +1,55 @@
+:root{
+  --brand:#c55a7a; 
+  --ink:#1f2937;
+  --muted:#6b7280;
+  --bg:#ffffff;
+  --card:#fff7f9;
+}
+
+*{box-sizing:border-box}
+html,body{padding:0;margin:0}
+body{
+  color:var(--ink);
+  background:var(--bg);
+  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, Helvetica Neue, Arial, Apple Color Emoji, Segoe UI Emoji;
+  line-height:1.5;
+}
+
+a{color:var(--brand);text-decoration:none}
+a:hover{text-decoration:underline}
+
+.container{
+  max-width:960px;
+  margin:0 auto;
+  padding:32px 20px;
+}
+
+.header{
+  display:flex; align-items:center; justify-content:space-between;
+  padding:20px 0; border-bottom:1px solid #eee;
+}
+
+.brand{font-weight:700; font-size:1.1rem; letter-spacing:.4px}
+.badge{padding:6px 10px; background:var(--card); border-radius:999px; font-size:.8rem; color:var(--brand)}
+
+.grid{ display:grid; gap:16px; }
+
+.card{
+  background:var(--card);
+  border:1px solid #f3d7df;
+  border-radius:12px; padding:16px;
+  transition:transform .08s ease;
+}
+.card:hover{transform: translateY(-2px)}
+
+.meta{color:var(--muted); font-size:.9rem}
+.h1{font-size:1.6rem; margin:.2rem 0 1rem}
+.h2{font-size:1.2rem; margin:.2rem 0 .6rem}
+
+.article{ padding-top:16px; }
+.article h1{font-size:2rem;margin:0 0 .5rem}
+.article p{margin:.7rem 0}
+.article img{max-width:100%; height:auto; border-radius:10px}
+pre{overflow:auto; background:#0f172a; color:#e2e8f0; padding:14px; border-radius:10px}
+code{font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;}
+blockquote{border-left:4px solid var(--brand); padding-left:12px; color:#374151}
