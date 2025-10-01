@@ -2,17 +2,17 @@ import type { Metadata } from 'next';
 import { getArticleBySlug, getAllSlugs } from '../../../lib/data';
 import { formatDateISOToPt, excerpt } from '../../../lib/utils';
 
-
+// VALORES LITERAIS (sem ternário)
 export const dynamic = 'force-static';
 export const revalidate = 3600;
 
-
+// SSG: gera os slugs estaticamente
 export async function generateStaticParams() {
   const slugs = await getAllSlugs();
   return slugs.map((slug) => ({ slug }));
 }
 
-
+// ✅ Tipagem correta (NADA de Promise aqui!)
 type PageProps = { params: { slug: string } };
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
